@@ -157,6 +157,35 @@
       color: var(--terracotta);
     }
 
+    /* Image placeholders */
+    .img-placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; background: var(--cream-mid);
+      border: 2px dashed rgba(74, 32, 64, 0.25);
+      border-radius: var(--r, 8px);
+      color: var(--ink-soft);
+    }
+    .img-placeholder .ph-icon { font-size: 2rem; opacity: 0.5; }
+    .img-placeholder .ph-filename {
+      font-family: var(--mono, monospace); font-size: 0.65rem; letter-spacing: 0.12em;
+      color: var(--forest); font-weight: 500; background: rgba(74,32,64,0.07);
+      padding: 0.2rem 0.65rem; border-radius: 4px;
+    }
+    .img-placeholder .ph-label {
+      font-size: 0.75rem; color: var(--ink-soft); text-align: center; max-width: 180px;
+      line-height: 1.5;
+    }
+
+    /* Hero placeholder */
+    .hero-portrait-placeholder {
+      width: 220px; height: 280px; margin: 2rem auto 0;
+    }
+
+    /* About portrait placeholder */
+    .about-portrait-placeholder {
+      width: 100%; aspect-ratio: 3/4; max-width: 360px;
+    }
+
     @media (max-width: 640px) {
       .honors-row { grid-template-columns: 1fr; }
       .value-divider { display: none; }
@@ -208,6 +237,11 @@
           <span class="badge-pill">Fresno State Alumni</span>
         </div>
         <p class="license-tag">CA DRE License #01819623 &nbsp;·&nbsp; Love JMA Team at CenCal Repros</p>
+        <div class="img-placeholder hero-portrait-placeholder">
+          <div class="ph-icon">📷</div>
+          <div class="ph-filename">courtnee-hero.jpg</div>
+          <div class="ph-label">Hero portrait — full or 3/4 shot, professional, branded background</div>
+        </div>
       </div>
     </section>
 
@@ -236,6 +270,11 @@
         <p class="section-label">About Courtnee</p>
         <h2 class="section-h" id="about-h"><em>Kind Yet Direct.</em><br>Fierce Negotiator.</h2>
         <div class="about-grid">
+          <div class="img-placeholder about-portrait-placeholder">
+            <div class="ph-icon">📷</div>
+            <div class="ph-filename">courtnee-waist-up.jpg</div>
+            <div class="ph-label">Waist-up professional portrait, blazer, neutral studio background</div>
+          </div>
           <div class="about-copy">
             <p>I'm Courtnee Waldron — your Central California Home Advisor, dedicated agent on the Love JMA Team, and someone who genuinely loves real estate and people in equal measure.</p>
             <p>A Fresno/Clovis native through and through, I attended Clovis West High School and graduated from Fresno State in 1998. The Central Valley isn't just where I work. It's home. I proudly serve buyers and sellers across Fresno, Clovis, Madera, Hanford, and the greater Central Valley.</p>
@@ -295,6 +334,20 @@
     </section>
 
 
+    <section class="showing-story" aria-label="In the field">
+      <div class="showing-photo img-placeholder" style="border-radius:0;border:none;">
+        <div class="ph-icon">📷</div>
+        <div class="ph-filename">courtnee-showing.jpg</div>
+        <div class="ph-label">Lifestyle shot — agent at entrance of a warm California home, folder in hand, welcoming smile</div>
+      </div>
+      <div class="showing-copy">
+        <p class="section-label">In the Field</p>
+        <h2 class="section-h"><em>Your Guide,</em><br>Every Step</h2>
+        <p>From the first tour to the closing table, Courtnee shows up with preparation, heart, and a commitment to making every transaction feel personal — because to you, it is.</p>
+        <p class="showing-note">Fresno &nbsp;·&nbsp; Clovis &nbsp;·&nbsp; Madera &nbsp;·&nbsp; Hanford &nbsp;·&nbsp; Central Valley</p>
+      </div>
+    </section>
+
     <section id="listings" class="listings" aria-labelledby="listings-h">
       <div class="wrap">
         <div class="listings-head">
@@ -302,9 +355,30 @@
           <a class="btn btn-outline" href="https://cencalrepros.com/listings">View All &rarr;</a>
         </div>
         <div class="listings-grid">
-          <article class="listing"><div class="listing-body"><span class="badge">Active</span><p class="listing-price">$479,000</p><p class="listing-addr">4821 Windmill Way, Clovis, CA 93611</p><ul class="listing-meta"><li>4 bd</li><li>2 ba</li><li>2,010 sqft</li></ul></div></article>
-          <article class="listing"><div class="listing-body"><span class="badge">Active</span><p class="listing-price">$359,500</p><p class="listing-addr">1142 River Bend Dr, Fresno, CA 93720</p><ul class="listing-meta"><li>3 bd</li><li>2 ba</li><li>1,540 sqft</li></ul></div></article>
-          <article class="listing"><div class="listing-body"><span class="badge sold">Sold</span><p class="listing-price">$528,000</p><p class="listing-addr">765 Harvest Glen Ave, Madera, CA 93638</p><ul class="listing-meta"><li>4 bd</li><li>3 ba</li><li>2,420 sqft</li></ul></div></article>
+          <article class="listing">
+            <div class="img-placeholder" style="height:200px;border-radius:var(--r,8px) var(--r,8px) 0 0;border-bottom:none;">
+              <div class="ph-icon">🏠</div>
+              <div class="ph-filename">listing-clovis-1.jpg</div>
+              <div class="ph-label">Exterior — ranch-style, stucco, green lawn, Clovis</div>
+            </div>
+            <div class="listing-body"><span class="badge">Active</span><p class="listing-price">$479,000</p><p class="listing-addr">4821 Windmill Way, Clovis, CA 93611</p><ul class="listing-meta"><li>4 bd</li><li>2 ba</li><li>2,010 sqft</li></ul></div>
+          </article>
+          <article class="listing">
+            <div class="img-placeholder" style="height:200px;border-radius:var(--r,8px) var(--r,8px) 0 0;border-bottom:none;">
+              <div class="ph-icon">🏠</div>
+              <div class="ph-filename">listing-fresno-1.jpg</div>
+              <div class="ph-label">Exterior — tree-lined street, inviting porch, Fresno</div>
+            </div>
+            <div class="listing-body"><span class="badge">Active</span><p class="listing-price">$359,500</p><p class="listing-addr">1142 River Bend Dr, Fresno, CA 93720</p><ul class="listing-meta"><li>3 bd</li><li>2 ba</li><li>1,540 sqft</li></ul></div>
+          </article>
+          <article class="listing">
+            <div class="img-placeholder" style="height:200px;border-radius:var(--r,8px) var(--r,8px) 0 0;border-bottom:none;">
+              <div class="ph-icon">🏠</div>
+              <div class="ph-filename">listing-madera-sold.jpg</div>
+              <div class="ph-label">Exterior — SOLD sign in front yard, good curb appeal</div>
+            </div>
+            <div class="listing-body"><span class="badge sold">Sold</span><p class="listing-price">$528,000</p><p class="listing-addr">765 Harvest Glen Ave, Madera, CA 93638</p><ul class="listing-meta"><li>4 bd</li><li>3 ba</li><li>2,420 sqft</li></ul></div>
+          </article>
         </div>
       </div>
     </section>
