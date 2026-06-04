@@ -3,25 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/images/jma-logo.png">
-  <title>Courtnee Waldron | REALTOR® | Love JMA Team</title>
-  <meta name="description" content="Courtnee Waldron, REALTOR® with the Love JMA Team at CenCal Repros. Creative, connected, and committed to her clients. CA DRE #01819623.">
-  <meta property="og:title" content="Courtnee Waldron | REALTOR® | Love JMA Team">
-  <meta property="og:description" content="Central California REALTOR® bringing creativity and genuine care to every transaction. CA DRE #01819623.">
+  <link rel="icon" type="image/png" href="../images/jma-logo.png">
+  <title>Courtnee Waldron | Central California Home Advisor | Love JMA Team</title>
+  <meta name="description" content="Courtnee Waldron, REALTOR® and Seniors Real Estate Specialist with the Love JMA Team. 18+ years of Central Valley expertise. Faith. Service. Love. CA DRE #01819623.">
+  <meta property="og:title" content="Courtnee Waldron | Opening Doors. Connecting Dreams.">
+  <meta property="og:description" content="Central California Home Advisor — nearly two decades of expertise, fierce negotiation, and a whole lot of heart. CA DRE #01819623.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://courtneewaldron.cencalrepros.com">
+  <meta property="og:url" content="https://courtnee.cencalrepros.com">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Courtnee Waldron — Deep Plum / Dusty Rose / Warm Gold on Ivory */
+    :root {
+      --forest:       #4A2040;
+      --forest-deep:  #361530;
+      --forest-light: rgba(74, 32, 64, 0.06);
+      --cream:        #FAF7F2;
+      --cream-soft:   #FDF9F4;
+      --cream-mid:    #F0E8E0;
+      --terracotta:   #C08090;
+      --terracotta-light: rgba(192, 128, 144, 0.12);
+      --ink-mid:      #4A3040;
+      --ink-soft:     #7A5A68;
+      --line:         rgba(74, 32, 64, 0.12);
+      --shadow:       0 20px 60px rgba(54, 21, 48, 0.14);
+      --shadow-sm:    0 4px 20px rgba(54, 21, 48, 0.08);
+    }
+
+    /* Faith / Service / Love values strip */
+    .values-strip {
+      background: var(--forest);
+      padding: 2.25rem clamp(1.5rem, 5vw, 4rem);
+    }
+    .values-inner {
+      width: min(900px, 100%); margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(2rem, 6vw, 5rem); flex-wrap: wrap;
+    }
+    .value-word {
+      font-family: var(--display); font-style: italic; font-weight: 400;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1;
+      color: var(--cream);
+    }
+    .value-divider {
+      width: 1px; height: 3rem;
+      background: rgba(250, 247, 242, 0.18);
+    }
+
+    /* Hero tagline quote */
+    .hero-tagline-quote {
+      margin-top: 1.5rem;
+      font-family: var(--mono); font-size: 0.65rem; font-weight: 400;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--terracotta);
+      opacity: 0; animation: fadeUp 0.9s ease 1.05s forwards;
+    }
+
+    /* Specialty badges */
+    .specialty-badges {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem;
+      opacity: 0; animation: fadeUp 0.9s ease 1.1s forwards;
+    }
+    .badge-pill {
+      padding: 0.4rem 1rem; border-radius: 100px;
+      border: 1px solid rgba(74, 32, 64, 0.2);
+      font-family: var(--mono); font-size: 0.58rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+      background: var(--cream-soft);
+    }
+
+    /* Faith block in about */
+    .faith-block {
+      margin-top: 2.5rem; padding: 2.25rem;
+      background: var(--forest); border-radius: var(--r);
+    }
+    .faith-block p {
+      font-family: var(--display); font-style: italic;
+      font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.65;
+      color: rgba(250, 247, 242, 0.82); text-align: center;
+    }
+    .faith-block strong {
+      color: var(--cream); font-style: normal; font-weight: 500;
+      display: block; font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      margin: 0.5rem 0;
+    }
+
+    /* Honors grid */
+    .honors-row {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+      margin-top: 2rem;
+    }
+    .honor {
+      padding: 1.25rem 1.5rem;
+      background: var(--cream); border-radius: var(--r);
+      border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+      display: flex; align-items: flex-start; gap: 0.85rem;
+    }
+    .honor-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .honor strong { display: block; font-size: 0.875rem; font-weight: 500; color: var(--forest); }
+    .honor span { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; }
+
+    @media (max-width: 640px) {
+      .honors-row { grid-template-columns: 1fr; }
+      .value-divider { display: none; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <nav class="site-nav" aria-label="Primary">
     <div class="nav-brand">
-      <a href="/" aria-label="Love JMA Team home" style="display:flex;align-items:center;gap:0.65rem;"><img src="../images/jma-logo.jpg" alt="Love JMA" style="height:34px;width:34px;object-fit:contain;mix-blend-mode:multiply;"><span style="font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:0.08em;color:var(--forest);">Love <em style="font-style:italic;color:var(--terracotta);">JMA</em> Team</span></a>
+      <a href="/" aria-label="Love JMA Team home" style="display:flex;align-items:center;gap:0.65rem;">
+        <img src="../images/jma-logo.png" alt="Love JMA" style="height:34px;width:34px;object-fit:contain;">
+        <span style="font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:0.08em;color:var(--forest);">Love <em style="font-style:italic;color:var(--terracotta);">JMA</em> Team</span>
+      </a>
       <div class="nav-divider" aria-hidden="true"></div>
       <span class="nav-agent">Courtnee Waldron</span>
     </div>
@@ -40,40 +139,78 @@
         <div class="hero-placeholder"><span>CW</span></div>
       </div>
       <div class="hero-content">
-        <p class="eyebrow">Central California REALTOR®</p>
+        <p class="eyebrow">Central California Home Advisor</p>
         <h1 id="agent-name">Courtnee<br><em>Waldron</em></h1>
-        <p class="hero-role">REALTOR® &nbsp;·&nbsp; DRE# 01819623</p>
-        <p class="hero-bio">Creative, connected, and fully committed to her clients. Courtnee brings a fresh perspective and tireless energy to Central Valley real estate — making the process exciting, not stressful.</p>
+        <p class="hero-role">REALTOR® &nbsp;·&nbsp; SRES® &nbsp;·&nbsp; DRE# 01819623</p>
+        <p class="hero-bio">Nearly two decades of Central Valley expertise, fierce negotiation skills, and a whole lot of heart — because buying or selling a home is one of the biggest decisions of your life, and you deserve someone who treats it that way.</p>
+        <p class="hero-tagline-quote">Opening Doors. Connecting Dreams.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Work With Me</a>
-          <a class="btn btn-outline" href="#listings">View Listings</a>
+          <a class="btn btn-outline" href="#about">My Story</a>
+        </div>
+        <div class="specialty-badges">
+          <span class="badge-pill">SRES® Certified</span>
+          <span class="badge-pill">Five-Star Professional</span>
+          <span class="badge-pill">18+ Years Experience</span>
+          <span class="badge-pill">Fresno State Alumni</span>
         </div>
         <p class="license-tag">CA DRE License #01819623 &nbsp;·&nbsp; Love JMA Team at CenCal Repros</p>
       </div>
     </section>
 
+    <!-- Faith. Service. Love. -->
+    <div class="values-strip" role="region" aria-label="Core values">
+      <div class="values-inner">
+        <span class="value-word">Faith</span>
+        <div class="value-divider" aria-hidden="true"></div>
+        <span class="value-word">Service</span>
+        <div class="value-divider" aria-hidden="true"></div>
+        <span class="value-word">Love</span>
+      </div>
+    </div>
+
     <div class="stats-bar" role="region" aria-label="At a glance">
       <div class="stats-inner">
-        <div class="stat"><strong class="stat-num">90+</strong><span class="stat-label">Homes Sold</span></div>
-        <div class="stat"><strong class="stat-num">5★</strong><span class="stat-label">Avg. Rating</span></div>
-        <div class="stat"><strong class="stat-num">10+</strong><span class="stat-label">Years in Real Estate</span></div>
-        <div class="stat"><strong class="stat-num">97%</strong><span class="stat-label">Client Satisfaction</span></div>
+        <div class="stat"><strong class="stat-num">18+</strong><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><strong class="stat-num">5★</strong><span class="stat-label">Five-Star Pro</span></div>
+        <div class="stat"><strong class="stat-num">SRES®</strong><span class="stat-label">Senior Specialist</span></div>
+        <div class="stat"><strong class="stat-num">5</strong><span class="stat-label">Counties Served</span></div>
       </div>
     </div>
 
     <section id="about" class="about" aria-labelledby="about-h">
       <div class="wrap">
         <p class="section-label">About Courtnee</p>
-        <h2 class="section-h" id="about-h"><em>Creative Mind,</em><br>Real Results</h2>
+        <h2 class="section-h" id="about-h"><em>Kind Yet Direct.</em><br>Fierce Negotiator.</h2>
         <div class="about-grid">
           <div class="about-copy">
-            <p>Courtnee Waldron is a REALTOR® with the Love JMA Team at CenCal Repros whose enthusiasm for real estate is matched only by her commitment to the people she serves. She approaches each transaction as a unique opportunity to connect the right person with the right property.</p>
-            <p>Known for her creative marketing, sharp eye for value, and genuine warmth with clients, Courtnee brings a distinctive energy to the team. Her clients don't just get a good agent — they get an advocate who genuinely cares about the outcome long after closing day.</p>
-            <p>A proud Central Valley local, Courtnee stays plugged into the community and ahead of market trends so her clients always have the best information to make confident decisions.</p>
-            <div class="credentials">
-              <div class="cred"><div class="cred-icon">🏡</div><div><strong>Residential &amp; Lifestyle</strong><span>Homes, condos, investment properties &amp; vacation rentals</span></div></div>
-              <div class="cred"><div class="cred-icon">📋</div><div><strong>Licensed REALTOR®</strong><span>CA DRE #01819623 · Member of NAR &amp; CAR</span></div></div>
-              <div class="cred"><div class="cred-icon">📍</div><div><strong>Central Valley Connected</strong><span>Fresno, Clovis, Hanford, Lemoore &amp; surrounding areas</span></div></div>
+            <p>I'm Courtnee Waldron — your Central California Home Advisor, dedicated agent on the Love JMA Team, and someone who genuinely loves real estate and people in equal measure.</p>
+            <p>A Fresno/Clovis native through and through, I attended Clovis West High School and graduated from Fresno State in 1998. The Central Valley isn't just where I work. It's home. I proudly serve buyers and sellers across Fresno, Clovis, Madera, Hanford, and the greater Central Valley.</p>
+            <p>My job isn't just to help you buy or sell. It's to walk alongside you through one of the biggest financial decisions of your life with honesty, expertise, and genuine care.</p>
+
+            <div class="faith-block">
+              <p>My approach is simple.</p>
+              <p><strong>Faith. Service. Love.</strong></p>
+              <p>Your best interest is always my top priority.</p>
+            </div>
+
+            <div class="honors-row">
+              <div class="honor">
+                <div class="honor-icon">🎓</div>
+                <div><strong>SRES® Certified</strong><span>Seniors Real Estate Specialist — certified to serve senior buyers and sellers with specialized care and expertise</span></div>
+              </div>
+              <div class="honor">
+                <div class="honor-icon">⭐</div>
+                <div><strong>Five-Star Professional</strong><span>Award recipient recognized for outstanding client service and satisfaction year after year</span></div>
+              </div>
+              <div class="honor">
+                <div class="honor-icon">🤍</div>
+                <div><strong>Boutique Experience</strong><span>White-glove service from first showing to final signature — always personal, never transactional</span></div>
+              </div>
+              <div class="honor">
+                <div class="honor-icon">📍</div>
+                <div><strong>Rooted in the Valley</strong><span>Fresno State alumni, Clovis West grad — deeply connected to the community she serves</span></div>
+              </div>
             </div>
           </div>
           <div class="about-img"><div class="about-img-ph" aria-hidden="true"><span>CW</span></div></div>
@@ -84,11 +221,23 @@
     <section class="services" aria-labelledby="svc-h">
       <div class="wrap">
         <p class="section-label">How I Can Help</p>
-        <h2 class="section-h" id="svc-h"><em>Full-Service</em><br>Real Estate</h2>
+        <h2 class="section-h" id="svc-h"><em>White-Glove</em><br>Real Estate</h2>
         <div class="services-grid">
-          <div class="svc"><div class="svc-num">01</div><h3>Home Buying</h3><p>I'll help you define what you're looking for, find it faster, and negotiate confidently — so you end up in a home you truly love.</p></div>
-          <div class="svc"><div class="svc-num">02</div><h3>Home Selling</h3><p>Eye-catching marketing, compelling staging advice, and strategic pricing that drives genuine buyer interest and strong offers.</p></div>
-          <div class="svc"><div class="svc-num">03</div><h3>Investment Properties</h3><p>Looking to build wealth through real estate? I'll help you identify strong opportunities and make investment decisions backed by real data.</p></div>
+          <div class="svc">
+            <div class="svc-num">01</div>
+            <h3>Home Buying</h3>
+            <p>From pre-approval to closing, I walk alongside you every step of the way — bringing local expertise, sharp strategy, and genuine care to finding your perfect Central Valley home.</p>
+          </div>
+          <div class="svc">
+            <div class="svc-num">02</div>
+            <h3>Home Selling</h3>
+            <p>Strategic pricing, professional presentation, and maximum exposure to sell your home fast and at the best possible price — with clear communication at every step.</p>
+          </div>
+          <div class="svc">
+            <div class="svc-num">03</div>
+            <h3>Senior Transitions</h3>
+            <p>As a certified SRES®, I guide senior buyers and sellers through the unique considerations of downsizing, relocating, or estate transitions — with patience, respect, and deep expertise.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -100,9 +249,9 @@
           <a class="btn btn-outline" href="https://cencalrepros.com/listings">View All &rarr;</a>
         </div>
         <div class="listings-grid">
-          <article class="listing"><div class="listing-img"><span class="badge">Active</span></div><div class="listing-body"><p class="listing-price">$399,000</p><p class="listing-addr">3318 Sunflower Terrace, Clovis, CA 93612</p><ul class="listing-meta"><li>3 bd</li><li>2 ba</li><li>1,680 sqft</li></ul></div></article>
-          <article class="listing"><div class="listing-img"><span class="badge">Active</span></div><div class="listing-body"><p class="listing-price">$255,000</p><p class="listing-addr">812 Lakeview Dr, Hanford, CA 93230</p><ul class="listing-meta"><li>3 bd</li><li>2 ba</li><li>1,320 sqft</li></ul></div></article>
-          <article class="listing"><div class="listing-img"><span class="badge sold">Sold</span></div><div class="listing-body"><p class="listing-price">$525,000</p><p class="listing-addr">4770 Copper Ridge Pl, Fresno, CA 93730</p><ul class="listing-meta"><li>4 bd</li><li>3 ba</li><li>2,440 sqft</li></ul></div></article>
+          <article class="listing"><div class="listing-img"><span class="badge">Active</span></div><div class="listing-body"><p class="listing-price">$479,000</p><p class="listing-addr">4821 Windmill Way, Clovis, CA 93611</p><ul class="listing-meta"><li>4 bd</li><li>2 ba</li><li>2,010 sqft</li></ul></div></article>
+          <article class="listing"><div class="listing-img"><span class="badge">Active</span></div><div class="listing-body"><p class="listing-price">$359,500</p><p class="listing-addr">1142 River Bend Dr, Fresno, CA 93720</p><ul class="listing-meta"><li>3 bd</li><li>2 ba</li><li>1,540 sqft</li></ul></div></article>
+          <article class="listing"><div class="listing-img"><span class="badge sold">Sold</span></div><div class="listing-body"><p class="listing-price">$528,000</p><p class="listing-addr">765 Harvest Glen Ave, Madera, CA 93638</p><ul class="listing-meta"><li>4 bd</li><li>3 ba</li><li>2,420 sqft</li></ul></div></article>
         </div>
       </div>
     </section>
@@ -112,9 +261,9 @@
         <p class="section-label">Client Reviews</p>
         <h2 class="section-h" id="testi-h"><em>What Clients</em><br>Are Saying</h2>
         <div class="testi-grid">
-          <div class="testi"><div class="testi-quote-mark">&ldquo;</div><p class="testi-quote">Courtnee made the whole process feel like an adventure rather than a chore. Creative, incredibly responsive, and genuinely excited for us every step of the way.</p><div class="testi-author"><strong>Derek &amp; Jasmine T.</strong><span>Buyer · Clovis, CA</span></div></div>
-          <div class="testi"><div class="testi-quote-mark">&ldquo;</div><p class="testi-quote">Courtnee staged and marketed our home beautifully. The listing photos were stunning and we had multiple offers in 72 hours. Her eye for presentation is a real differentiator.</p><div class="testi-author"><strong>The Zimmerman Family</strong><span>Seller · Fresno, CA</span></div></div>
-          <div class="testi"><div class="testi-quote-mark">&ldquo;</div><p class="testi-quote">I bought my first investment property with Courtnee's help. She walked me through the numbers, helped me spot the right deal, and stayed by my side the whole way.</p><div class="testi-author"><strong>Alondra V.</strong><span>Investor · Hanford, CA</span></div></div>
+          <div class="testi"><div class="testi-quote-mark">&ldquo;</div><p class="testi-quote">Courtnee walked us through the entire process with patience and clarity. We've never felt more taken care of. She truly lives up to Faith, Service, Love — we felt it every step of the way.</p><div class="testi-author"><strong>The Martinez Family</strong><span>Buyer · Clovis, CA</span></div></div>
+          <div class="testi"><div class="testi-quote-mark">&ldquo;</div><p class="testi-quote">We were nervous about downsizing after 30 years in our home. Courtnee's SRES® expertise made all the difference. She understood exactly what we needed and handled everything with such grace.</p><div class="testi-author"><strong>Robert &amp; Patricia H.</strong><span>Seller · Fresno, CA</span></div></div>
+          <div class="testi"><div class="testi-quote-mark">&ldquo;</div><p class="testi-quote">She negotiated hard for us and got us $15k over asking in a tough market. If you want someone who fights for you and actually cares, call Courtnee.</p><div class="testi-author"><strong>Jasmine T.</strong><span>Buyer · Madera, CA</span></div></div>
         </div>
       </div>
     </section>
@@ -122,12 +271,12 @@
     <section id="contact" class="contact" aria-labelledby="contact-h">
       <div class="wrap">
         <p class="section-label">Get In Touch</p>
-        <h2 class="section-h" id="contact-h"><em>Let's Find</em><br>What's Next</h2>
+        <h2 class="section-h" id="contact-h"><em>Let's Open</em><br>Your Next Door</h2>
         <div class="contact-grid">
           <div class="contact-info">
-            <div class="c-item"><div class="c-icon">📞</div><div class="c-text"><strong>Phone</strong><a href="tel:+15595550700">(559) 555-0700</a></div></div>
+            <div class="c-item"><div class="c-icon">📞</div><div class="c-text"><strong>Phone</strong><a href="tel:5595551234">559.555.1234</a></div></div>
             <div class="c-item"><div class="c-icon">✉️</div><div class="c-text"><strong>Email</strong><a href="mailto:courtnee@lovejma.com">courtnee@lovejma.com</a></div></div>
-            <div class="c-item"><div class="c-icon">📍</div><div class="c-text"><strong>Serving</strong><span>Fresno, Clovis, Hanford, Lemoore &amp; the Central Valley</span></div></div>
+            <div class="c-item"><div class="c-icon">📍</div><div class="c-text"><strong>Serving</strong><span>Fresno, Clovis, Madera, Hanford &amp; the Central Valley</span></div></div>
             <div class="brokerage-card">
               <p class="brokerage-label">Brokerage</p>
               <p class="brokerage-name">CenCal Repros</p>
@@ -151,6 +300,7 @@
                   <option value="buying">Buying a Home</option>
                   <option value="selling">Selling My Home</option>
                   <option value="both">Buying &amp; Selling</option>
+                  <option value="senior">Senior Transition</option>
                   <option value="investing">Investment Property</option>
                   <option value="other">Just Exploring</option>
                 </select>
@@ -167,9 +317,9 @@
 
   <footer>
     <div class="footer-inner">
-      <a class="footer-logo" href="https://cencalrepros.com">Love <em>JMA</em> Team</a>
+      <a class="footer-logo" href="/">Love <em>JMA</em> Team</a>
       <div class="footer-links">
-        <a href="https://cencalrepros.com">Meet the Team</a>
+        <a href="/">Meet the Team</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Accessibility</a>
       </div>
