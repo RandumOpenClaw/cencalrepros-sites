@@ -1,22 +1,22 @@
-/* CenCal Repros — Shared Agent Site Styles
+/* Love JMA Team — Shared Agent Site Styles
    Fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (labels)
-   Palette: forest / cream / terracotta
-   Reference: Kaylee O'Brien coming-soon (Love JMA Team)
+   Palette: crimson / cream / gold
+   Brand: dark red heart logo, white script
 */
 :root {
-  --forest: #3a4a3a;
-  --forest-deep: #2a382a;
-  --forest-light: rgba(58, 74, 58, 0.06);
+  --forest: #8b1010;
+  --forest-deep: #6b0000;
+  --forest-light: rgba(139, 16, 16, 0.06);
   --cream: #f5f1ea;
   --cream-soft: #faf7f1;
   --cream-mid: #ede8df;
-  --terracotta: #b8704f;
-  --terracotta-light: rgba(184, 112, 79, 0.1);
-  --ink-mid: #4a504a;
-  --ink-soft: #6b716b;
-  --line: rgba(58, 74, 58, 0.12);
-  --shadow: 0 20px 60px rgba(42, 56, 42, 0.12);
-  --shadow-sm: 0 4px 20px rgba(42, 56, 42, 0.08);
+  --terracotta: #c4922a;
+  --terracotta-light: rgba(196, 146, 42, 0.1);
+  --ink-mid: #4a3a3a;
+  --ink-soft: #7a6060;
+  --line: rgba(139, 16, 16, 0.12);
+  --shadow: 0 20px 60px rgba(107, 0, 0, 0.12);
+  --shadow-sm: 0 4px 20px rgba(107, 0, 0, 0.08);
   --display: 'Cormorant Garamond', 'Times New Roman', serif;
   --body: 'Inter', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;

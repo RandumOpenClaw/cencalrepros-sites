@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/jma-logo.png">
+  <title>Love JMA Team | Central California Real Estate</title>
+  <meta name="description" content="Love JMA Team — 7 dedicated REALTORS® serving Central California buyers and sellers with expertise, integrity, and genuine care. Brokered by CenCal Repros.">
+  <meta property="og:title" content="Love JMA Team | Central California Real Estate">
+  <meta property="og:description" content="A team of 7 dedicated REALTORS® built on trust, results, and a genuine love for the communities we serve.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lovejma.cencalrepros.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Team-page–specific overrides */
+
+    /* Hero: full-bleed dark with centered content */
+    .hero-team {
+      min-height: 100svh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: calc(68px + 4rem) clamp(1.5rem, 6vw, 6rem) 5rem;
+      text-align: center;
+      background: linear-gradient(170deg, var(--forest-deep) 0%, #1e2a1e 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero-team::after {
+      content: 'JMA';
+      position: absolute; bottom: -4rem; right: -2rem;
+      font-family: var(--display); font-style: italic; font-weight: 400;
+      font-size: 28vw; line-height: 1;
+      color: rgba(245, 241, 234, 0.03);
+      pointer-events: none; user-select: none;
+    }
+    .hero-team .eyebrow { justify-content: center; }
+    .hero-team h1 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.92; letter-spacing: -0.015em;
+      color: var(--cream);
+      margin-top: 1.8rem;
+      opacity: 0; animation: fadeUp 0.9s ease 0.55s forwards;
+    }
+    .hero-team h1 em { font-style: italic; color: var(--terracotta); }
+    .hero-team .hero-tagline {
+      margin-top: 2rem; max-width: 600px;
+      font-family: var(--display); font-style: italic;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem); line-height: 1.5;
+      color: rgba(245, 241, 234, 0.65);
+      opacity: 0; animation: fadeUp 0.9s ease 0.85s forwards;
+    }
+    .hero-team .hero-actions {
+      justify-content: center;
+      opacity: 0; animation: fadeUp 0.9s ease 1s forwards;
+    }
+    .hero-team .btn-primary { background: var(--terracotta); border-color: var(--terracotta); }
+    .hero-team .btn-primary:hover { background: #a35f3f; border-color: #a35f3f; }
+    .hero-team .btn-outline { color: var(--cream); border-color: rgba(245, 241, 234, 0.35); }
+    .hero-team .btn-outline:hover { background: rgba(245, 241, 234, 0.08); }
+    .hero-brokerage {
+      margin-top: 3rem;
+      font-family: var(--mono); font-size: 0.58rem; font-weight: 400;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(245, 241, 234, 0.3);
+      opacity: 0; animation: fadeUp 0.9s ease 1.15s forwards;
+    }
+
+    /* Team nav override */
+    .site-nav .nav-brand .nav-logo-team {
+      font-family: var(--display); font-weight: 500; font-size: 1.25rem;
+      letter-spacing: 0.08em; color: var(--forest);
+    }
+    .site-nav .nav-logo-team em { font-style: italic; color: var(--terracotta); }
+
+    /* About team */
+    .about-team { background: var(--cream-soft); }
+    .about-team-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+      margin-top: 4rem; align-items: center;
+    }
+    .about-team-copy p {
+      margin-bottom: 1.35rem; color: var(--ink-mid);
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem); line-height: 1.8;
+    }
+    .pillars { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2.5rem; }
+    .pillar {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.1rem 1.35rem;
+      background: var(--cream); border-radius: var(--r);
+      border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+    }
+    .pillar-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--terracotta-light); border-radius: 50%;
+      font-size: 0.95rem;
+    }
+    .pillar strong { display: block; font-size: 0.875rem; font-weight: 500; color: var(--forest); }
+    .pillar span { font-size: 0.8rem; color: var(--ink-soft); }
+    .about-team-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .team-visual-block {
+      border-radius: var(--r); overflow: hidden;
+      background: linear-gradient(170deg, var(--forest) 0%, var(--forest-deep) 100%);
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .team-visual-block:first-child {
+      grid-column: 1 / -1; aspect-ratio: 2/1;
+    }
+    .team-visual-block span {
+      font-family: var(--display); font-style: italic; font-size: 3rem; font-weight: 400;
+      color: rgba(245, 241, 234, 0.15); user-select: none;
+    }
+
+    /* Meet the team */
+    .meet { background: var(--cream); }
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .agent-card {
+      border-radius: var(--r); overflow: hidden;
+      border: 1px solid var(--line); background: var(--cream-soft);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+    }
+    .agent-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .agent-card-photo {
+      aspect-ratio: 4/3;
+      background: linear-gradient(170deg, var(--forest) 0%, var(--forest-deep) 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .agent-card-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .agent-initials {
+      font-family: var(--display); font-style: italic; font-size: 4rem; font-weight: 400;
+      color: rgba(245, 241, 234, 0.18); user-select: none;
+    }
+    .agent-role-badge {
+      position: absolute; top: 0.85rem; right: 0.85rem;
+      background: var(--terracotta); color: var(--cream);
+      padding: 0.28rem 0.7rem; border-radius: 2px;
+      font-family: var(--mono); font-size: 0.55rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .agent-role-badge.broker { background: var(--forest-deep); }
+    .agent-card-body {
+      padding: 1.5rem; display: flex; flex-direction: column; flex: 1;
+    }
+    .agent-card-name {
+      font-family: var(--display); font-weight: 500;
+      font-size: 1.5rem; line-height: 1.1; color: var(--forest);
+    }
+    .agent-card-name em { font-style: italic; color: var(--terracotta); }
+    .agent-card-title {
+      font-family: var(--mono); font-size: 0.58rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+      margin-top: 0.5rem;
+    }
+    .agent-card-bio {
+      font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65;
+      margin-top: 0.85rem; flex: 1;
+    }
+    .agent-card-footer {
+      margin-top: 1.25rem; padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .agent-dre {
+      font-family: var(--mono); font-size: 0.55rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+    }
+    .agent-cta {
+      font-family: var(--mono); font-size: 0.58rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta);
+      white-space: nowrap;
+    }
+    .agent-card:hover .agent-cta { text-decoration: underline; }
+
+    /* Featured broker row */
+    .agents-featured {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .agents-featured .agent-card-photo { aspect-ratio: 16/9; }
+    .agents-rest {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem; margin-top: 1.5rem;
+    }
+
+    /* Why section */
+    .why { background: var(--cream-soft); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .why-item {
+      padding: 2.5rem; border-radius: var(--r);
+      border: 1px solid var(--line); background: var(--cream);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .why-item:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .why-num {
+      font-family: var(--display); font-style: italic; font-size: 3rem; font-weight: 400;
+      color: var(--terracotta); opacity: 0.4; line-height: 1;
+    }
+    .why-item h3 {
+      margin-top: 1rem;
+      font-family: var(--display); font-weight: 500; font-size: 1.6rem;
+      line-height: 1.1; color: var(--forest);
+    }
+    .why-item p { margin-top: 0.85rem; color: var(--ink-mid); font-size: 0.95rem; line-height: 1.7; }
+
+    /* Team contact */
+    .team-contact { background: var(--forest-deep); }
+    .team-contact .section-label { color: var(--terracotta); }
+    .team-contact .section-label::after { background: var(--terracotta); }
+    .team-contact .section-h { color: var(--cream); }
+    .team-contact .section-h em { color: var(--terracotta); }
+    .contact-cta-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+      margin-top: 4rem; align-items: start;
+    }
+    .contact-cta-copy p {
+      font-family: var(--display); font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.65;
+      color: rgba(245, 241, 234, 0.65); margin-bottom: 1.5rem;
+    }
+    .contact-reach { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .reach-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .reach-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(184, 112, 79, 0.15); border-radius: 50%;
+      font-size: 1rem;
+    }
+    .reach-text strong { display: block; font-size: 0.875rem; font-weight: 500; color: var(--cream); }
+    .reach-text a, .reach-text span {
+      font-size: 0.92rem; color: rgba(245, 241, 234, 0.55);
+    }
+    .reach-text a:hover { color: var(--terracotta); }
+    .team-contact .contact-form {
+      background: rgba(245, 241, 234, 0.04);
+      border: 1px solid rgba(245, 241, 234, 0.08);
+    }
+    .team-contact .form-group label { color: rgba(245, 241, 234, 0.45); }
+    .team-contact .form-group input,
+    .team-contact .form-group select,
+    .team-contact .form-group textarea {
+      background: rgba(245, 241, 234, 0.06);
+      border-color: rgba(245, 241, 234, 0.1);
+      color: var(--cream);
+    }
+    .team-contact .form-group input::placeholder,
+    .team-contact .form-group textarea::placeholder { color: rgba(245, 241, 234, 0.25); }
+    .team-contact .form-group input:focus,
+    .team-contact .form-group select:focus,
+    .team-contact .form-group textarea:focus {
+      border-color: var(--terracotta);
+    }
+    .team-contact .btn-primary { background: var(--terracotta); border-color: var(--terracotta); }
+    .team-contact .btn-primary:hover { background: #a35f3f; border-color: #a35f3f; }
+
+    @media (max-width: 1024px) {
+      .about-team-grid, .contact-cta-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .about-team-visual { order: -1; }
+      .agents-featured { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .agents-rest { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .about-team-visual { grid-template-columns: 1fr; }
+      .team-visual-block:first-child { grid-column: 1; aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-brand">
+      <a href="/" aria-label="Love JMA Team home" style="display:flex;align-items:center;gap:0.75rem;">
+        <img src="./images/jma-logo.png" alt="Love JMA Team" style="height:38px;width:38px;object-fit:contain;flex-shrink:0;">
+        <span class="nav-logo" style="font-family:var(--display);font-weight:500;font-size:1.25rem;letter-spacing:0.08em;color:var(--forest);">Love <em style="font-style:italic;color:var(--terracotta);">JMA</em> Team</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#team">Our Team</a>
+      <a href="#contact" class="nav-cta">Get In Touch</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="hero-team" aria-labelledby="team-name">
+      <div style="width:110px;height:110px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;opacity:0;animation:fadeIn 0.9s ease 0.2s forwards;box-shadow:0 4px 28px rgba(0,0,0,0.35);flex-shrink:0;">
+        <img src="./images/jma-logo.png" alt="Love JMA Team" style="width:96px;height:96px;object-fit:contain;">
+      </div>
+      <p class="eyebrow">Central California Real Estate</p>
+      <h1 id="team-name">Love <em>JMA</em><br>Team</h1>
+      <p class="hero-tagline">Seven dedicated REALTORS® united by one belief — buying or selling your home should feel like being taken care of by people who genuinely love what they do.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Work With Us</a>
+        <a class="btn btn-outline" href="#team">Meet the Team</a>
+      </div>
+      <p class="hero-brokerage">Brokered by CenCal Repros &nbsp;·&nbsp; Central Valley, California</p>
+    </section>
+
+    <div class="stats-bar" role="region" aria-label="Team at a glance">
+      <div class="stats-inner">
+        <div class="stat"><strong class="stat-num">7</strong><span class="stat-label">Team Agents</span></div>
+        <div class="stat"><strong class="stat-num">500+</strong><span class="stat-label">Homes Sold</span></div>
+        <div class="stat"><strong class="stat-num">25+</strong><span class="stat-label">Years Combined</span></div>
+        <div class="stat"><strong class="stat-num">5★</strong><span class="stat-label">Avg. Rating</span></div>
+      </div>
+    </div>
+
+    <section id="about" class="about-team" aria-labelledby="about-h">
+      <div class="wrap">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-h" id="about-h"><em>Built on Care,</em><br>Driven by Results</h2>
+        <div class="about-team-grid">
+          <div class="about-team-copy">
+            <p>Love JMA Team is a close-knit group of seven REALTORS® based in California's Central Valley. We operate under CenCal Repros with a shared mission: give every client — whether they're buying their first home or selling the family house — expert, personalized service they'll actually want to talk about.</p>
+            <p>Our team was built with intention. Founded by Jennifer Martin, one of the Valley's most experienced brokers, Love JMA brings together agents at every stage of their career — seasoned veterans and rising talent, united by the same standards and the same genuine love for helping people.</p>
+            <p>We cover Fresno, Clovis, Madera, and the surrounding communities. Whatever your real estate goal, one of us is your person.</p>
+            <div class="pillars">
+              <div class="pillar"><div class="pillar-icon">🤝</div><div><strong>Genuine Relationships</strong><span>Clients come first — every time, no exceptions</span></div></div>
+              <div class="pillar"><div class="pillar-icon">📊</div><div><strong>Market Expertise</strong><span>Deep local knowledge across the entire Central Valley</span></div></div>
+              <div class="pillar"><div class="pillar-icon">✅</div><div><strong>End-to-End Support</strong><span>With you from first showing to closed escrow and beyond</span></div></div>
+            </div>
+          </div>
+          <div class="about-team-visual" aria-hidden="true">
+            <div class="team-visual-block"><span>Love JMA</span></div>
+            <div class="team-visual-block"><span>Fresno</span></div>
+            <div class="team-visual-block"><span>Clovis</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="meet" aria-labelledby="team-h">
+      <div class="wrap">
+        <p class="section-label">Our Agents</p>
+        <h2 class="section-h" id="team-h"><em>Meet</em><br>the Team</h2>
+
+        <!-- Founding brokers -->
+        <div class="agents-featured" role="list">
+
+          <a class="agent-card" href="./jennifer-martin/" role="listitem" aria-label="Jennifer Martin, Designated Broker and Owner">
+            <div class="agent-card-photo">
+              <span class="agent-initials">JM</span>
+              <span class="agent-role-badge broker">Broker · Owner</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Jennifer <em>Martin</em></div>
+              <div class="agent-card-title">Designated Broker &nbsp;·&nbsp; Owner</div>
+              <p class="agent-card-bio">The founder behind the Love JMA Team. Jennifer built CenCal Repros with one mission — exceptional real estate representation for every client, every time. 25+ years of experience, an unmatched network, and the steady hand every deal needs.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #00948442</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="agent-card" href="./bryan-martin/" role="listitem" aria-label="Bryan Martin, Broker and Owner">
+            <div class="agent-card-photo">
+              <span class="agent-initials">BM</span>
+              <span class="agent-role-badge broker">Broker · Owner</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Bryan <em>Martin</em></div>
+              <div class="agent-card-title">Broker &nbsp;·&nbsp; Owner</div>
+              <p class="agent-card-bio">Two decades of Central California deal-making. Bryan brings deep market expertise, sharp negotiation, and a broker's steady hand to every transaction — whether it's a first-time buyer or a seasoned investor.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #01710197</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- The rest of the team -->
+        <div class="agents-rest" role="list">
+
+          <a class="agent-card" href="./sally-obrien/" role="listitem" aria-label="Sally O'Brien, REALTOR">
+            <div class="agent-card-photo">
+              <span class="agent-initials">SO</span>
+              <span class="agent-role-badge">REALTOR®</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Sally <em>O'Brien</em></div>
+              <div class="agent-card-title">REALTOR®</div>
+              <p class="agent-card-bio">Seasoned Central California expertise and a steady, trusted approach. Sally's clients know they're in experienced hands.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #01980038</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="agent-card" href="./courtnee-waldron/" role="listitem" aria-label="Courtnee Waldron, REALTOR">
+            <div class="agent-card-photo">
+              <span class="agent-initials">CW</span>
+              <span class="agent-role-badge">REALTOR®</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Courtnee <em>Waldron</em></div>
+              <div class="agent-card-title">REALTOR®</div>
+              <p class="agent-card-bio">Creative, connected, and fully committed to her clients. Courtnee brings fresh energy and tireless dedication to every transaction.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #01819623</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="agent-card" href="./kaylee-obrien/" role="listitem" aria-label="Kaylee O'Brien, REALTOR">
+            <div class="agent-card-photo">
+              <span class="agent-initials">KO</span>
+              <span class="agent-role-badge">REALTOR®</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Kaylee <em>O'Brien</em></div>
+              <div class="agent-card-title">REALTOR®</div>
+              <p class="agent-card-bio">Dedicated to helping Central Valley families find their perfect home — with genuine care, sharp market knowledge, and relentless hustle.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #02009698</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="agent-card" href="./jennifer-schoolcraft-wills/" role="listitem" aria-label="Jennifer Schoolcraft-Wills, REALTOR">
+            <div class="agent-card-photo">
+              <span class="agent-initials">JSW</span>
+              <span class="agent-role-badge">REALTOR®</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Jennifer <em>Schoolcraft-Wills</em></div>
+              <div class="agent-card-title">REALTOR®</div>
+              <p class="agent-card-bio">Energetic, thorough, and genuinely invested in every client's success. Jennifer makes sure every buyer and seller feels seen, heard, and expertly represented.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #02012079</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="agent-card" href="./danielle-carrillo/" role="listitem" aria-label="Danielle Carrillo, REALTOR">
+            <div class="agent-card-photo">
+              <span class="agent-initials">DC</span>
+              <span class="agent-role-badge">REALTOR®</span>
+            </div>
+            <div class="agent-card-body">
+              <div class="agent-card-name">Danielle <em>Carrillo</em></div>
+              <div class="agent-card-title">REALTOR®</div>
+              <p class="agent-card-bio">Passionate about people and properties. Danielle combines warmth, professionalism, and relentless dedication to help families buy and sell with confidence.</p>
+              <div class="agent-card-footer">
+                <span class="agent-dre">CA DRE #02163743</span>
+                <span class="agent-cta">View Profile &rarr;</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-h">
+      <div class="wrap">
+        <p class="section-label">Why Love JMA</p>
+        <h2 class="section-h" id="why-h"><em>The Team</em><br>Difference</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-num">01</div>
+            <h3>Local Depth</h3>
+            <p>Our agents live in and love the Central Valley. We don't just know the market data — we know the neighborhoods, the schools, the streets, and the people.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-num">02</div>
+            <h3>Right Agent, Right Fit</h3>
+            <p>Seven agents means seven different strengths. We'll connect you with the person who's the best fit for your goals, timeline, and personality.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-num">03</div>
+            <h3>Team Backing</h3>
+            <p>When you work with one of us, you work with all of us. Every agent on this team has the full support, resources, and experience of the group behind them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="team-contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-h" id="contact-h"><em>Let's Find</em><br>Your Agent</h2>
+        <div class="contact-cta-grid">
+          <div class="contact-cta-copy">
+            <p>Not sure where to start? Reach out and we'll connect you with the right person on the team. No pressure, no scripts — just a real conversation about your real estate goals.</p>
+            <p>We serve Fresno, Clovis, Madera, Visalia, and communities throughout the Central Valley.</p>
+            <div class="contact-reach">
+              <div class="reach-item">
+                <div class="reach-icon">✉️</div>
+                <div class="reach-text">
+                  <strong>Email the Team</strong>
+                  <a href="mailto:hello@lovejma.com">hello@lovejma.com</a>
+                </div>
+              </div>
+              <div class="reach-item">
+                <div class="reach-icon">📍</div>
+                <div class="reach-text">
+                  <strong>Serving</strong>
+                  <span>Fresno, Clovis, Madera &amp; the Central Valley</span>
+                </div>
+              </div>
+              <div class="reach-item">
+                <div class="reach-icon">🏢</div>
+                <div class="reach-text">
+                  <strong>Brokerage</strong>
+                  <span>CenCal Repros &nbsp;·&nbsp; Central California</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form action="#" method="post" aria-label="Contact Love JMA Team">
+              <div class="form-row">
+                <div class="form-group"><label for="fn">First Name</label><input type="text" id="fn" name="first_name" autocomplete="given-name" required></div>
+                <div class="form-group"><label for="ln">Last Name</label><input type="text" id="ln" name="last_name" autocomplete="family-name" required></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label for="em">Email</label><input type="email" id="em" name="email" autocomplete="email" required></div>
+                <div class="form-group"><label for="ph">Phone</label><input type="tel" id="ph" name="phone" autocomplete="tel"></div>
+              </div>
+              <div class="form-group">
+                <label for="int">I'm Interested In</label>
+                <select id="int" name="interest">
+                  <option value="">Select one...</option>
+                  <option value="buying">Buying a Home</option>
+                  <option value="selling">Selling My Home</option>
+                  <option value="both">Buying &amp; Selling</option>
+                  <option value="investing">Investment Property</option>
+                  <option value="other">Just Exploring</option>
+                </select>
+              </div>
+              <div class="form-group"><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Tell us what you're looking for..."></textarea></div>
+              <button type="submit" class="btn btn-primary btn-full">Connect with the Team</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="/">Love <em>JMA</em> Team</a>
+      <div class="footer-links">
+        <a href="#team">Meet the Team</a>
+        <a href="https://cencalrepros.com">CenCal Repros</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Love JMA Team &nbsp;&middot;&nbsp; Brokered by CenCal Repros</p>
+    </div>
+  </footer>
+
+</body>
+</html>
