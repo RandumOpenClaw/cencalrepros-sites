@@ -106,9 +106,65 @@
     .honor strong { display: block; font-size: 0.875rem; font-weight: 500; color: var(--forest); }
     .honor span { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; }
 
+    /* Lifestyle image section */
+    .showing-story {
+      background: var(--forest);
+      padding: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: stretch;
+    }
+    .showing-photo {
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .showing-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .showing-copy {
+      padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .showing-copy .section-label {
+      color: var(--terracotta);
+    }
+    .showing-copy .section-label::after {
+      background: var(--terracotta);
+    }
+    .showing-copy .section-h {
+      color: var(--cream);
+    }
+    .showing-copy p {
+      max-width: 520px;
+      margin-top: 1.5rem;
+      color: rgba(250, 247, 242, 0.76);
+      font-size: clamp(1rem, 1.6vw, 1.12rem);
+      line-height: 1.85;
+    }
+    .showing-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(250, 247, 242, 0.14);
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
     @media (max-width: 640px) {
       .honors-row { grid-template-columns: 1fr; }
       .value-divider { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      .showing-story { grid-template-columns: 1fr; }
+      .showing-photo { min-height: 360px; }
     }
   </style>
 </head>
@@ -239,6 +295,19 @@
             <p>As a certified SRES®, I guide senior buyers and sellers through the unique considerations of downsizing, relocating, or estate transitions — with patience, respect, and deep expertise.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="showing-story" aria-labelledby="showing-h">
+      <div class="showing-photo">
+        <img src="../images/courtnee-showing.jpg" alt="Courtnee Waldron welcoming clients at a Central Valley home">
+      </div>
+      <div class="showing-copy">
+        <p class="section-label">In The Field</p>
+        <h2 class="section-h" id="showing-h"><em>Present.</em><br>Prepared. Personal.</h2>
+        <p>Whether we're walking through your first showing, preparing your home for market, or sitting at the table working through the details, I show up ready to protect your goals and make the process feel clear.</p>
+        <p>Real estate is personal. The right advisor should feel steady, responsive, and fully invested from the first conversation to the final key.</p>
+        <div class="showing-note">Guidance for buyers, sellers, and senior transitions</div>
       </div>
     </section>
 
